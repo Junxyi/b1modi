@@ -1,0 +1,38 @@
+# Macro file for example B1
+# 
+# Can be run in batch, without graphic
+# or interactively: Idle> /control/execute run1.mac
+#
+# Change the default number of workers (in multi-threading mode) 
+#/run/numberOfThreads 4
+#
+# Initialize kernel
+/run/initialize
+#
+/control/verbose 2
+/run/verbose 2
+/event/verbose 0
+/tracking/verbose 2
+# 
+# gamma 6 MeV to the direction (0.,0.,1.)
+#
+/gps/verbose 2
+/gps/particle e-
+/gps/pos/type Beam
+/gps/pos/shape Circle
+/gps/pos/centre 0 0 0
+/gps/pos/radius 2 um
+/gps/ang/type cos
+/gps/ang/rot1 0. 0. -1.
+/gps/ang/rot2 0. 0. -1.
+/gps/ene/type Lin
+/gps/ene/min 60. keV
+/gps/ene/max 120. keV
+/gps/ene/gradient 1
+/gps/ene/intercept 1
+/process/em/fluo true
+/run/setCut  0.001 mm
+/process/em/deexcitationIgnoreCut true 
+
+#
+/run/beamOn 1000
